@@ -2,6 +2,7 @@ package com.dc.jvm8.interfaces;
 
 import com.dc.jvm8.interfaces.impl.IMockFunctionalInterface;
 import com.dc.jvm8.interfaces.impl.IMockInterface;
+import com.dc.jvm8.interfaces.impl.IMockInterfaceWithArguments;
 
 public class MockImpl {
 	public static void main(String[] args) {
@@ -18,5 +19,15 @@ public class MockImpl {
 		
 		IMockFunctionalInterface funcInterface = () -> "Functional Interface via Annotations";
 		System.out.println(funcInterface.getMessage());
+	
+		IMockInterfaceWithArguments arguments = (v1,v2) -> {
+			int result = v1+v2;
+			System.out.println(" The sum is "+ result);
+		};
+		
+		arguments.getSum(11, 22);
+		
+		
+	
 	}
 }
